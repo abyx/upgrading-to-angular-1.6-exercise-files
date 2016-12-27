@@ -1,0 +1,17 @@
+{
+  "name": "exercise-files",
+  "private": true,
+  "version": "0.0.0",
+  "devDependencies": {
+    "angular-stub-changes": "1.0.2",
+    "http-server": "0.9.0",
+    "jasmine-core": "2.5.2",
+    "karma": "1.4.0",
+    "karma-chrome-launcher": "2.0.0",
+    "karma-jasmine": "1.1.0"
+  },
+  "scripts": {
+    "start": "http-server -a localhost -p 8000 -c-1 .",
+    "test": "karma start karma.conf.js --single-run"
+  }
+}

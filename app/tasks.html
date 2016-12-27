@@ -1,0 +1,24 @@
+<div class="tasks">
+    <ul>
+        <li ng-repeat="todo in tasks">
+            <div ng-controller="TodoCtrl">
+                <label>
+                    <input type="checkbox" ng-model="todo.done">
+                    <span class="todo-name" ng-bind="formattedTodoName">
+                    </span>
+                    <button ng-click="deleteTodo(todo)">
+                      Delete
+                    </button>
+                    <span class="way-to-go" ng-if="showWayToGo">
+                      <em>Way to go!</em>
+                    </span>
+                </label>
+            </div>
+        </li>
+    </ul>
+
+    <div class="clock-nagger">
+        Get to it! The clock is ticking...
+        <span ng-bind="formattedTime"></span>
+    </div>
+</div>
