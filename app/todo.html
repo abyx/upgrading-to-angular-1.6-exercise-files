@@ -2,7 +2,7 @@
     <input type="checkbox" ng-model="todo.done">
     <span class="todo-name" ng-bind="formattedTodoName">
     </span>
-    <button ng-click="deleteTodo(todo)">
+    <button ng-click="deleteTodo({todo: todo})">
         Delete
     </button>
     <span class="way-to-go" ng-if="showWayToGo">

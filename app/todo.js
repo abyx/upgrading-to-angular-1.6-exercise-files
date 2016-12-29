@@ -28,7 +28,10 @@ angular.module('app').directive('todo', function() {
   return {
     restrict: 'E',
     templateUrl: 'app/todo.html',
-    scope: true,
+    scope: {
+      todo: '<',
+      deleteTodo: '&'
+    },
     controller: 'TodoCtrl'
   };
 });
