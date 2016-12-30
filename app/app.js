@@ -1,10 +1,9 @@
 angular.module('app', ['ngRoute'])
   .config(function($routeProvider) {
     $routeProvider.when('/', {
-      templateUrl: 'app/tasks.html',
-      controller: 'TasksCtrl',
+      template: '<tasks tasks="$resolve.tasks"></tasks>',
       resolve: {
-        resolvedTasks: function(Tasks) {
+        tasks: function(Tasks) {
           return Tasks.get();
         }
       }
