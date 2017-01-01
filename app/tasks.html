@@ -1,13 +1,13 @@
 <div class="tasks">
     <ul>
-        <li ng-repeat="todo in tasks">
-            <todo todo="todo" delete-todo="deleteTodo(todo)">
+        <li ng-repeat="todo in $ctrl.tasks">
+            <todo todo="todo" delete-todo="$ctrl.deleteTodo(todo)">
             </todo>
         </li>
     </ul>
 
     <div class="clock-nagger">
         Get to it! The clock is ticking...
-        <span ng-bind="formattedTime"></span>
+        <span ng-bind="$ctrl.formattedTime"></span>
     </div>
 </div>

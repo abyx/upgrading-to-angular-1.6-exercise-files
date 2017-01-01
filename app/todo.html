@@ -1,11 +1,11 @@
 <label>
-    <input type="checkbox" ng-model="todo.done">
-    <span class="todo-name" ng-bind="formattedTodoName">
+    <input type="checkbox" ng-model="$ctrl.todo.done">
+    <span class="todo-name" ng-bind="$ctrl.formattedTodoName">
     </span>
-    <button ng-click="deleteTodo({todo: todo})">
+    <button ng-click="$ctrl.deleteTodo({todo: $ctrl.todo})">
         Delete
     </button>
-    <span class="way-to-go" ng-if="showWayToGo">
+    <span class="way-to-go" ng-if="$ctrl.showWayToGo">
         <em>Way to go!</em>
     </span>
 </label>
