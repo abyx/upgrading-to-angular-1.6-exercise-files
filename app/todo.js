@@ -1,24 +1,25 @@
 angular.module('app').controller('TodoCtrl', function($scope, $timeout) {
   var wayToGoPromise = undefined;
+  var self = this;
 
   $scope.$watch('todo', function() {
-    var name = $scope.todo.name;
-    $scope.formattedTodoName = name.charAt(0).toUpperCase()
-      + name.substring(1).toLowerCase();
+    var name = self.todo.name;
+    self.formattedTodoName = name.charAt(0).toUpperCase()
+        + name.substring(1).toLowerCase();
   });
 
   $scope.$watch('todo.done', displayWayToGoMessage);
 
   function displayWayToGoMessage() {
-    if ($scope.todo.done) {
-      $scope.showWayToGo = true;
+    if (self.todo.done) {
+      self.showWayToGo = true;
 
       if (wayToGoPromise) {
         $timeout.cancel(wayToGoPromise);
       }
 
       wayToGoPromise = $timeout(function() {
-        $scope.showWayToGo = false;
+        self.showWayToGo = false;
       }, 1500);
     }
   }
@@ -32,6 +33,8 @@ angular.module('app').directive('todo', function() {
       todo: '<',
       deleteTodo: '&'
     },
-    controller: 'TodoCtrl'
+    controller: 'TodoCtrl',
+    controllerAs: '$ctrl',
+    bindToController: true
   };
 });
