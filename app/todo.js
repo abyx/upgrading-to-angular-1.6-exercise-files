@@ -25,16 +25,11 @@ angular.module('app').controller('TodoCtrl', function($scope, $timeout) {
   }
 });
 
-angular.module('app').directive('todo', function() {
-  return {
-    restrict: 'E',
-    templateUrl: 'app/todo.html',
-    scope: {
-      todo: '<',
-      deleteTodo: '&'
-    },
-    controller: 'TodoCtrl',
-    controllerAs: '$ctrl',
-    bindToController: true
-  };
+angular.module('app').component('todo', {
+  templateUrl: 'app/todo.html',
+  bindings: {
+    todo: '<',
+    deleteTodo: '&'
+  },
+  controller: 'TodoCtrl'
 });

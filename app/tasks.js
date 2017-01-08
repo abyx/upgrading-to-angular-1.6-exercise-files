@@ -16,15 +16,10 @@ angular.module('app').controller('TasksCtrl', function($scope, $interval) {
   $scope.$on('$destroy', function() {
     $interval.cancel(interval);
   });
-}).directive('tasks', function() {
-  return {
-    restrict: 'E',
-    controllerAs: '$ctrl',
-    bindToController: true,
-    templateUrl: 'app/tasks.html',
-    controller: 'TasksCtrl',
-    scope: {
-      tasks: '<'
-    }
-  };
+}).component('tasks', {
+  templateUrl: 'app/tasks.html',
+  controller: 'TasksCtrl',
+  bindings: {
+    tasks: '<'
+  }
 });
