@@ -8,7 +8,4 @@ angular.module('app', ['ngRoute'])
         }
       }
     });
-  }).
-  config(function($compileProvider) {
-    $compileProvider.preAssignBindingsEnabled(true);
   });
