@@ -3,13 +3,15 @@ angular.module('app').controller('TodoCtrl', function($scope, $timeout) {
   var self = this;
 
   self.$onInit = function() {
-    $scope.$watch(function() { return self.todo; }, function() {
+    $scope.$watch(function() { return self.todo.done; }, displayWayToGoMessage);
+  };
+
+  self.$onChanges = function(changes) {
+    if (changes.todo) {
       var name = self.todo.name;
       self.formattedTodoName = name.charAt(0).toUpperCase()
-          + name.substring(1).toLowerCase();
-    });
-
-    $scope.$watch(function() { return self.todo.done; }, displayWayToGoMessage);
+        + name.substring(1).toLowerCase();
+    }
   };
 
   function displayWayToGoMessage() {
