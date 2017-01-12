@@ -1,9 +1,20 @@
-angular.module('app').controller('TodoCtrl', function($scope, $timeout) {
+angular.module('app').controller('TodoCtrl', function($timeout) {
   var wayToGoPromise = undefined;
   var self = this;
+  var prevTodoDone = undefined;
 
   self.$onInit = function() {
-    $scope.$watch(function() { return self.todo.done; }, displayWayToGoMessage);
+    console.log('todo initialized');
+  };
+
+  self.$doCheck = function() {
+    if (self.todo.done !== prevTodoDone) {
+      if (self.todo.done) {
+        displayWayToGoMessage();
+      }
+
+      prevTodoDone = self.todo.done;
+    }
   };
 
   self.$onChanges = function(changes) {
