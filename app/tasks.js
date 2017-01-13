@@ -1,17 +1,17 @@
-angular.module('app').controller('TasksCtrl', function($scope, $interval) {
+angular.module('app').controller('TasksCtrl', function($interval) {
   var self = this;
 
   self.$onInit = function() {
     updateClock();
     var interval = $interval(updateClock, 1000 * 60);
-
-    $scope.$on('$destroy', function() {
-      $interval.cancel(interval);
-    });
   };
 
   self.deleteTodo = function(todo) {
     self.tasks.splice(self.tasks.indexOf(todo), 1);
+  };
+
+  self.$onDestroy = function() {
+    $interval.cancel(interval);
   };
 
   function updateClock() {
