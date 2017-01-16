@@ -25,6 +25,10 @@ angular.module('app').controller('TodoCtrl', function($timeout) {
     }
   };
 
+  self.$postLink = function() {
+    console.log('This runs after linking is done');
+  };
+
   function displayWayToGoMessage() {
     if (self.todo.done) {
       self.showWayToGo = true;
