@@ -1,10 +1,10 @@
-<button ng-click="$ctrl.moveUp({todo: $ctrl.todo})">&#x25B2;</button>
-<button ng-click="$ctrl.moveDown({todo: $ctrl.todo})">&#x25BC;</button>
+<button ng-click="$ctrl.tasksCtrl.moveUp($ctrl.todo)">&#x25B2;</button>
+<button ng-click="$ctrl.tasksCtrl.moveDown($ctrl.todo)">&#x25BC;</button>
 <label>
     <input type="checkbox" ng-model="$ctrl.todo.done">
     <span class="todo-name" ng-bind="$ctrl.formattedTodoName">
     </span>
-    <button ng-click="$ctrl.deleteTodo({todo: $ctrl.todo})">
+    <button ng-click="$ctrl.tasksCtrl.deleteTodo($ctrl.todo)">
         Delete
     </button>
     <span class="way-to-go" ng-if="$ctrl.showWayToGo">

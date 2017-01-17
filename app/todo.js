@@ -47,10 +47,10 @@ angular.module('app').controller('TodoCtrl', function($timeout) {
 angular.module('app').component('todo', {
   templateUrl: 'app/todo.html',
   bindings: {
-    todo: '<',
-    deleteTodo: '&',
-    moveUp: '&',
-    moveDown: '&'
+    todo: '<'
+  },
+  require: {
+    tasksCtrl: '^^tasks'
   },
   controller: 'TodoCtrl'
 });
