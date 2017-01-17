@@ -1,3 +1,5 @@
+<button ng-click="$ctrl.moveUp({todo: $ctrl.todo})">&#x25B2;</button>
+<button ng-click="$ctrl.moveDown({todo: $ctrl.todo})">&#x25BC;</button>
 <label>
     <input type="checkbox" ng-model="$ctrl.todo.done">
     <span class="todo-name" ng-bind="$ctrl.formattedTodoName">

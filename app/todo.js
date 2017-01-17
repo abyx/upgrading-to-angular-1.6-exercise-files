@@ -48,7 +48,9 @@ angular.module('app').component('todo', {
   templateUrl: 'app/todo.html',
   bindings: {
     todo: '<',
-    deleteTodo: '&'
+    deleteTodo: '&',
+    moveUp: '&',
+    moveDown: '&'
   },
   controller: 'TodoCtrl'
 });

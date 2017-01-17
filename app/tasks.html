@@ -1,7 +1,10 @@
 <div class="tasks">
     <ul>
         <li ng-repeat="todo in $ctrl.tasks">
-            <todo todo="todo" delete-todo="$ctrl.deleteTodo(todo)">
+            <todo todo="todo"
+                    delete-todo="$ctrl.deleteTodo(todo)"
+                    move-up="$ctrl.moveUp(todo)"
+                    move-down="$ctrl.moveDown(todo)">
             </todo>
         </li>
     </ul>
