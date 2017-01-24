@@ -34,12 +34,10 @@ angular.module('app').controller('TasksCtrl', function($interval, $scope) {
     self.tasks.splice(index + 1, 0, todo);
   };
 
-  function watchDarkMode() {
-    $scope.$watch(function() { return self.mode; },
-      function() {
-        self.tasksTheme = self.mode === 'dark' ? 'dark-theme' : '';
-      });
-  }
+  self.onDarkModeToggle = function(mode) {
+    self.mode = mode;
+    self.tasksTheme = mode === 'dark' ? 'dark-theme' : '';
+  };
 
   function updateClock() {
     self.formattedTime = new Date().toLocaleTimeString(undefined, {

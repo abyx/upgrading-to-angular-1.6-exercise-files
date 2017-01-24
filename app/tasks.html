@@ -6,6 +6,8 @@
     </ul>
 
     <footer>
-        <dark-mode-toggle mode="$ctrl.mode"></dark-mode-toggle>
+        <dark-mode-toggle mode="$ctrl.mode"
+            on-dark-mode-toggle="$ctrl.onDarkModeToggle(mode)">
+        </dark-mode-toggle>
     </footer>
 </div>

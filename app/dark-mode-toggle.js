@@ -2,17 +2,15 @@ angular.module('app').controller('DarkModeToggleCtrl', function() {
   var self = this;
 
   self.toggle = function() {
-    if (self.mode === 'dark') {
-      self.mode = 'light';
-    } else {
-      self.mode = 'dark';
-    }
+    var newMode = self.mode === 'dark' ? 'light' : 'dark';
+    self.onDarkModeToggle({mode: newMode});
   };
 })
 .component('darkModeToggle', {
   templateUrl: 'app/dark-mode-toggle.html',
   bindings: {
-    mode: '='
+    mode: '<',
+    onDarkModeToggle: '&'
   },
   controller: 'DarkModeToggleCtrl'
 });

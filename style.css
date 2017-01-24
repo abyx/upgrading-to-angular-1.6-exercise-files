@@ -1,8 +1,26 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
 .tasks {
-    height: 80vh;
+    padding: 1em;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     font-size: 26px;
     font-family: Helvetica;
+    box-sizing: border-box;
+}
+
+.tasks.dark-theme {
+    color: white;
+    background: #333;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
