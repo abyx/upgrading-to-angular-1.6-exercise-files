@@ -1,12 +1,11 @@
-<div class="tasks">
+<div class="tasks" ng-class="$ctrl.tasksTheme">
     <ul>
         <li ng-repeat="todo in $ctrl.tasks">
             <todo todo="todo"></todo>
         </li>
     </ul>
 
-    <div class="clock-nagger">
-        Get to it! The clock is ticking...
-        <span ng-bind="$ctrl.formattedTime"></span>
-    </div>
+    <footer>
+        <dark-mode-toggle mode="$ctrl.mode"></dark-mode-toggle>
+    </footer>
 </div>

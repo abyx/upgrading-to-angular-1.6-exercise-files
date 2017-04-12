@@ -1,9 +1,11 @@
-angular.module('app').controller('TasksCtrl', function($interval) {
+angular.module('app').controller('TasksCtrl', function($interval, $scope) {
   var self = this;
 
   self.$onInit = function() {
     updateClock();
     var interval = $interval(updateClock, 1000 * 60);
+
+    watchDarkMode();
   };
 
   self.deleteTodo = function(todo) {
@@ -31,6 +33,13 @@ angular.module('app').controller('TasksCtrl', function($interval) {
     self.tasks.splice(index, 1);
     self.tasks.splice(index + 1, 0, todo);
   };
+
+  function watchDarkMode() {
+    $scope.$watch(function() { return self.mode; },
+      function() {
+        self.tasksTheme = self.mode === 'dark' ? 'dark-theme' : '';
+      });
+  }
 
   function updateClock() {
     self.formattedTime = new Date().toLocaleTimeString(undefined, {
